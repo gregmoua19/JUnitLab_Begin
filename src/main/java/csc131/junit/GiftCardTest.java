@@ -42,7 +42,7 @@ public class GiftCardTest {
 		String 		test;
 
 		
-		amount 		 = 20.00;
+		amount 		 = 200.00;
 		issuingStore = 1337;
 		balance 	 = 100.00;
 		card = new GiftCard(issuingStore, balance);
@@ -55,7 +55,7 @@ public class GiftCardTest {
 				test = "Remaining Balance: ";
 			}
 			
-			test += String.format("%6.2f", balance-amount);
+			test += String.format("%6.2f", Math.abs(balance-amount));
 		}
 		
 		assertEquals("deduct(amount)", test, card.deduct(amount));
